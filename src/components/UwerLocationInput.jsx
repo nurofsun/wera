@@ -1,4 +1,5 @@
 import React from 'react'
+import { ReactComponent as MapIcon } from '../icons/map.svg'
 
 class UwerLocationInput extends React.Component {
     constructor(props) {
@@ -11,7 +12,21 @@ class UwerLocationInput extends React.Component {
     }
     render() {
         return(
-            <input className="UwerLocationInput" type="text" name="city" value={this.props.location} onChange={this.handleChange} autoFocus/>
+            <div className="UwerFieldWithIcon">
+                <input 
+                    className="UwerLocationInput" 
+                    type="text" 
+                    name="city" 
+                    value={this.props.location} 
+                    placeholder="Location"
+                    autoComplete="off"
+                    onChange={this.handleChange}
+                    autoFocus={true}
+                    />
+                <span className="UwerInputIcon">
+                    <MapIcon/>
+                </span>
+            </div>
         )
     }
 }

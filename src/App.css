@@ -1,79 +1,130 @@
-h2.location {
-  margin: 0px !important;
-  margin-bottom: 10px;
-  font-weight: bold;
+svg path {
+  fill: #444;
+}
+svg {
+  width: 24px;
+  height: auto;
 }
 .App {
   height: 100vh;
-  color: #333;
-}
-.section {
-  padding: 15px;
-}
-.container {
-  max-width: 640px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.UwerLocationInput {
-  outline: none;
-  padding: 10px;
-  border-radius: 6px;
-  overflow: hidden;
-  background-color: white;
   width: 100%;
-  border: 1px solid rgba(0,0,0,0.5);
-  font-size: 14pt;
+  background-color: #f7f7f7;
+  color: #424242;
 }
-
-.icon svg {
-  width: 24px;
-  height: auto;
-  vertical-align: middle;
-}
-
-.weather {
-  text-align: center;
-}
-
-.weather .status {
+.Uwer {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 10px 5px 0px 5px;
 }
-.weather .status .label {
-  text-transform: capitalize;
+.UwerContainer {
+  max-width: 456px;
+  margin-left: auto;
+  margin-right: auto;
 }
-.icon > i.owi {
-  font-size: 3.5rem;
+.UwerLocation {
+  margin-bottom: 20px;
+  text-align: center;
 }
-
-.weather .temperature {
-  padding: 20px;
+.UwerCity {
+  font-weight: bold;
 }
-.weather .temperature .celsius {
-  font-size: 6.5rem;
-  display: inline-block;
-  font-weight: 700;
-  letter-spacing: -10px;
+.UwerLocation p:first-child {
+  margin-bottom: 10px;
+  font-size: 20px;
 }
-.weather .temperature .icon {
-  display: inline-block;
-  vertical-align: top;
+.UwerNavbar {
+  padding: 10px;
+  background-color: white;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  box-shadow: 0px -2px 10px 0px rgba(0,0,0, 0.05);
 }
-.weather .temperature .icon svg {
-  width: 45px;
+.UwerFieldWithIcon {
+  position: relative;
+}
+.UwerLocationInput {
+  width: 100%;
+  padding: 15px 20px;
+  border: 1px solid rgba(0,0,0,0.3);
+  overflow: hidden;
+  border-radius: 6px;
+  font-size: 12pt;
+  outline: none;
+}
+.UwerLocationInput:focus {
+  box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.5);
+  border-color: #333;
+}
+.UwerLocationInput::placeholder {
+  color: #888888;
+}
+.UwerLocationInput:focus ~ .UwerInputIcon svg path {
+  fill: #555;
+}
+.UwerInputIcon {
+  display: flex;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  padding: 0px 10px;
+}
+.UwerInputIcon svg {
+  width: 24px;
   height: auto;
 }
-
-.weather .location {
-  font-weight: bold;
-  margin-bottom: 5px;
+.UwerInputIcon svg path {
+  fill: #999999;
 }
-
-.weather time {
+.UwerLocation p:nth-child(2) {
   font-weight: 300;
-  font-size: 10pt;
+}
+.UwerStatus {
+  padding: 10px;
+  text-align: center;
+}
+.UwerStatusIcon {
+  display: block;
+}
+.UwerStatusIcon i {
+  font-size: 3rem;
+}
+.UwerStatusLabel {
+  display: block;
+  text-transform: capitalize;
+}
+.UwerTemperature {
+  padding: 12px;
+}
+.UwerTemperature .UwerCelsius {
+  font-size: 8rem;
+  letter-spacing: -5px;
+  font-weight: bold;
+}
+.UwerTemperature .UwerCelsiusIcon {
+  vertical-align: top;
+  display: inline-flex;
+}
+.UwerTemperature .UwerCelsiusIcon svg {
+  width: 50px;
+  height: auto;
+}
+.UwerWelcomeMessage {
+  padding: 10px 20px;
+  text-align: left;
+  max-width: 275px;
+}
+.UwerWelcomeMessage .Title {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.UwerWelcomeMessage .Subtitle {
+  font-size: 1rem;
+  color: #666666;
+  line-height: 1.5;
 }

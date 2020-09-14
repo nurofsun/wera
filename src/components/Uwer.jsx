@@ -45,7 +45,8 @@ class Uwer extends React.Component {
         this.state = {
             location: '',
             dataWeather: null,
-            errorMessage: null
+            errorMessage: null,
+            theme: null
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -87,13 +88,31 @@ class Uwer extends React.Component {
 
         return `${getDayName(today)}, ${dateToday} ${getMonthName(month)} ${year}`
     }
-
+    dynamicTheme() {
+        let date = new Date();
+        let hours = date.getHours();
+        if (hours > 17) {
+            this.setState({
+                theme: 'dark'
+            })
+        } else {
+            this.setState({
+                theme: 'light'
+            })
+        }
+        
+    }
     renderCurrentWeather() {
         if (this.state.dataWeather === null) {
             return(
-                <p>
-                    Please input location.
-                </p>
+                <div className="UwerWelcomeMessage">
+                    <h2 className="Title">
+                        Uwer
+                    </h2>
+                    <h4 className="Subtitle">
+                        Instantly Check Current Weather Around 2000 Million Places.
+                    </h4>
+                </div>
             )
         }
         if (this.state.dataWeather && this.state.dataWeather.main !== undefined) {
@@ -110,24 +129,26 @@ class Uwer extends React.Component {
             ) 
         }
         return(
-            <div className="content">
+            <div className="UwerErrorMessage">
                 <p>Nothing location has found.</p>
             </div>
         )
     }
 
+    componentDidMount() {
+        this.dynamicTheme()
+    }
+
 
     render() {
         return(
-            <div className="section">
-                <div className="container">
-                    {this.renderCurrentWeather()}
-                    <UwerNavbar>
-                        <form onSubmit={this.handleSubmit}>
-                            <UwerLocationInput location={this.state.location} OnUwerLocationChange={this.handleChange}/>
-                        </form>
-                    </UwerNavbar>
-                </div>
+            <div className={'Uwer ' + this.state.theme}>
+                {this.renderCurrentWeather()}
+                <UwerNavbar>
+                    <form onSubmit={this.handleSubmit}>
+                        <UwerLocationInput location={this.state.location} OnUwerLocationChange={this.handleChange}/>
+                    </form>
+                </UwerNavbar>
             </div>
         )
     }
