@@ -1,42 +1,77 @@
 import React from "react"
+// app config
+import Config from '../uwer.config.js'
+// sub components
+import UwerLocationInput from './UwerLocationInput.jsx'
+import UwerWeatherContainer from './UwerWeatherContainer.jsx'
+import UwerNavbar from './UwerNavbar.jsx'
 
-const API_KEY="b579f58fb2ca327dee317f222b0e60b5"
-const BASE_API_URL="http://api.openweathermap.org/data/2.5"
+const { API_KEY, BASE_API_URL } = Config;
+
+function getMonthName(monthIndex) {
+    let months = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'Juney',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December'
+    ];
+
+    return months[monthIndex - 1];
+}
+
+function getDayName(dayIndex) {
+    let days = [
+        'Sunday',
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Saturday'
+    ];
+
+    return days[dayIndex];
+}
 
 class Uwer extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            city: '',
+            location: '',
             dataWeather: null,
             errorMessage: null
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
     }
-    handleChange(event) {
+    handleChange(value) {
         this.setState({
-            city: event.target.value
+            location: value
         })
     }
     handleSubmit(event) {
         event.preventDefault()
         this.getCurrentWeather()
         this.setState({
-            city: ''
+            location: ''
         })
     }
-    
-    componentDidMount() {
+    generateIcon(code) {
+        return `owi owi-${code}`
     }
-
     // custom methods goes here
     getCurrentWeather() {
-        fetch(`${BASE_API_URL}/weather?q=${this.state.city}&appid=${API_KEY}`)
+        fetch(`${BASE_API_URL}/weather?q=${this.state.location}&appid=${API_KEY}&units=metric`)
             .then( response => {
                 if (!response.ok) {
                     this.setState({
-                        errorMessage: 'Nothing city Has been found'
+                        errorMessage: 'Nothing location Has been found'
                     })
                 }
                 return response.json()
@@ -44,26 +79,39 @@ class Uwer extends React.Component {
             .then( dataWeather => this.setState({ dataWeather }))
             .catch(err => console.log(err))
     }
+    dateFormatter(date) {
+        let today = date.getDay();
+        let dateToday = date.getDate();
+        let month = date.getMonth();
+        let year = date.getFullYear();
+
+        return `${getDayName(today)}, ${dateToday} ${getMonthName(month)} ${year}`
+    }
 
     renderCurrentWeather() {
         if (this.state.dataWeather === null) {
             return(
-                <div className="content">
-                    <p>Please search the city</p>
-                </div>
+                <p>
+                    Please input location.
+                </p>
             )
         }
         if (this.state.dataWeather && this.state.dataWeather.main !== undefined) {
             return(
-                <div className="content">
-                    <p>City: {this.state.dataWeather.name}</p>
-                    <p>{this.state.dataWeather.weather[0].main}</p>
-                </div>
+                <UwerWeatherContainer
+                    dateTime={new Date()}
+                    time={this.dateFormatter(new Date())}
+                    city={this.state.dataWeather.name}
+                    country={this.state.dataWeather.sys.country}
+                    temperature={Math.round(this.state.dataWeather.main.temp)}
+                    status={this.state.dataWeather.weather[0].description}
+                    icon={this.generateIcon(this.state.dataWeather.weather[0].icon)}
+                />
             ) 
         }
         return(
             <div className="content">
-                <p>Nothing city has found.</p>
+                <p>Nothing location has found.</p>
             </div>
         )
     }
@@ -73,11 +121,12 @@ class Uwer extends React.Component {
         return(
             <div className="section">
                 <div className="container">
-                    <h1 className="title">{this.props.title}</h1>
-                    <form onSubmit={this.handleSubmit}>
-                        <input type="text" name="city" value={this.state.city} onChange={this.handleChange} autoFocus/>
-                    </form>
                     {this.renderCurrentWeather()}
+                    <UwerNavbar>
+                        <form onSubmit={this.handleSubmit}>
+                            <UwerLocationInput location={this.state.location} OnUwerLocationChange={this.handleChange}/>
+                        </form>
+                    </UwerNavbar>
                 </div>
             </div>
         )
