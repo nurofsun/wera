@@ -114,7 +114,7 @@ class Wera extends React.Component {
                     </header>
                     <section>
                         <p className="Subtitle">
-                            Instantly Check Current Weather Around 2000 Million Places.
+                            Instantly Check Current Weather Around More Than a Million Places.
                         </p>
                     </section>
                 </article>
