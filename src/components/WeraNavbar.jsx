@@ -1,13 +1,13 @@
 import React from 'react'
 
-class UwerNavbar extends React.Component {
+class WeraNavbar extends React.Component {
     render() {
         return(
-            <nav className="UwerNavbar">
+            <nav className="WeraNavbar">
                 {this.props.children}
             </nav>
         )
     }
 }
 
-export default UwerNavbar;
+export default WeraNavbar;

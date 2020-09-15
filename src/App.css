@@ -5,36 +5,32 @@ svg {
   width: 24px;
   height: auto;
 }
-.App {
-  height: 100vh;
-  width: 100%;
-  background-color: #f7f7f7;
-  color: #424242;
-}
-.Uwer {
+.Wera {
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: #f7f7f7;
+  color: #424242;
 }
-.UwerContainer {
+.WeraContainer {
   max-width: 456px;
   margin-left: auto;
   margin-right: auto;
 }
-.UwerLocation {
+.WeraLocation {
   margin-bottom: 20px;
   text-align: center;
 }
-.UwerCity {
+.WeraCity {
   font-weight: bold;
 }
-.UwerLocation p:first-child {
+.WeraLocation p:first-child {
   margin-bottom: 10px;
   font-size: 20px;
 }
-.UwerNavbar {
+.WeraNavbar {
   padding: 10px;
   background-color: white;
   position: fixed;
@@ -43,10 +39,10 @@ svg {
   width: 100%;
   box-shadow: 0px -2px 10px 0px rgba(0,0,0, 0.05);
 }
-.UwerFieldWithIcon {
+.WeraFieldWithIcon {
   position: relative;
 }
-.UwerLocationInput {
+.WeraLocationInput {
   width: 100%;
   padding: 15px 20px;
   border: 1px solid rgba(0,0,0,0.3);
@@ -55,17 +51,20 @@ svg {
   font-size: 12pt;
   outline: none;
 }
-.UwerLocationInput:focus {
-  box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.5);
+.WeraLocationInput:focus {
+  box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.2);
   border-color: #333;
 }
-.UwerLocationInput::placeholder {
+.WeraLocationInput:focus::placeholder {
+  color: #555555;
+}
+.WeraLocationInput::placeholder {
   color: #888888;
 }
-.UwerLocationInput:focus ~ .UwerInputIcon svg path {
+.WeraLocationInput:focus ~ .WeraInputIcon svg path {
   fill: #555;
 }
-.UwerInputIcon {
+.WeraInputIcon {
   display: flex;
   position: absolute;
   top: 0px;
@@ -73,57 +72,64 @@ svg {
   right: 0px;
   padding: 0px 10px;
 }
-.UwerInputIcon svg {
+.WeraInputIcon svg {
   width: 24px;
   height: auto;
 }
-.UwerInputIcon svg path {
+.WeraInputIcon svg path {
   fill: #999999;
 }
-.UwerLocation p:nth-child(2) {
+.WeraLocation p:nth-child(2) {
   font-weight: 300;
 }
-.UwerStatus {
+.WeraStatus {
   padding: 10px;
   text-align: center;
 }
-.UwerStatusIcon {
+.WeraStatusIcon {
   display: block;
 }
-.UwerStatusIcon i {
+.WeraStatusIcon i {
   font-size: 3rem;
 }
-.UwerStatusLabel {
+.WeraStatusLabel {
   display: block;
   text-transform: capitalize;
 }
-.UwerTemperature {
+.WeraTemperature {
   padding: 12px;
 }
-.UwerTemperature .UwerCelsius {
+.WeraTemperature .WeraCelsius {
   font-size: 8rem;
   letter-spacing: -5px;
   font-weight: bold;
 }
-.UwerTemperature .UwerCelsiusIcon {
+.WeraTemperature .WeraCelsiusIcon {
   vertical-align: top;
   display: inline-flex;
 }
-.UwerTemperature .UwerCelsiusIcon svg {
+.WeraTemperature .WeraCelsiusIcon svg {
   width: 50px;
   height: auto;
 }
-.UwerWelcomeMessage {
+.WeraWelcomeMessage {
   padding: 10px 20px;
   text-align: left;
   max-width: 275px;
 }
-.UwerWelcomeMessage .Title {
-  font-size: 3.5rem;
-  margin-bottom: 10px;
-  font-weight: 700;
+.Logo {
+  vertical-align: bottom;
+  width: 64px;
+  height: auto;
+  margin-right: 10px;
 }
-.UwerWelcomeMessage .Subtitle {
+.LogoLabel {
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+.WeraWelcomeMessage .Subtitle {
   font-size: 1rem;
   color: #666666;
   line-height: 1.5;

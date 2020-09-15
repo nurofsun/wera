@@ -2,9 +2,11 @@ import React from "react"
 // app config
 import Config from '../uwer.config.js'
 // sub components
-import UwerLocationInput from './UwerLocationInput.jsx'
-import UwerWeatherContainer from './UwerWeatherContainer.jsx'
-import UwerNavbar from './UwerNavbar.jsx'
+import WeraLocationInput from './WeraLocationInput.jsx'
+import WeraWeatherContainer from './WeraWeatherContainer.jsx'
+import WeraNavbar from './WeraNavbar.jsx'
+
+import logo from'../logo.svg'
 
 const { API_KEY, BASE_API_URL } = Config;
 
@@ -39,7 +41,7 @@ function getDayName(dayIndex) {
     return days[dayIndex];
 }
 
-class Uwer extends React.Component {
+class Wera extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -105,19 +107,22 @@ class Uwer extends React.Component {
     renderCurrentWeather() {
         if (this.state.dataWeather === null) {
             return(
-                <div className="UwerWelcomeMessage">
-                    <h2 className="Title">
-                        Uwer
-                    </h2>
-                    <h4 className="Subtitle">
-                        Instantly Check Current Weather Around 2000 Million Places.
-                    </h4>
-                </div>
+                <article className="WeraWelcomeMessage">
+                    <header>
+                        <img className="Logo" src={logo} width="64" alt="Wera"/>
+                        <strong className="LogoLabel">Wera</strong>
+                    </header>
+                    <section>
+                        <p className="Subtitle">
+                            Instantly Check Current Weather Around 2000 Million Places.
+                        </p>
+                    </section>
+                </article>
             )
         }
         if (this.state.dataWeather && this.state.dataWeather.main !== undefined) {
             return(
-                <UwerWeatherContainer
+                <WeraWeatherContainer
                     dateTime={new Date()}
                     time={this.dateFormatter(new Date())}
                     city={this.state.dataWeather.name}
@@ -129,7 +134,7 @@ class Uwer extends React.Component {
             ) 
         }
         return(
-            <div className="UwerErrorMessage">
+            <div className="WeraErrorMessage">
                 <p>Nothing location has found.</p>
             </div>
         )
@@ -139,19 +144,22 @@ class Uwer extends React.Component {
         this.dynamicTheme()
     }
 
-
     render() {
         return(
-            <div className={'Uwer ' + this.state.theme}>
-                {this.renderCurrentWeather()}
-                <UwerNavbar>
-                    <form onSubmit={this.handleSubmit}>
-                        <UwerLocationInput location={this.state.location} OnUwerLocationChange={this.handleChange}/>
-                    </form>
-                </UwerNavbar>
+            <div className={'Wera ' + this.state.theme}>
+                <header>
+                    <WeraNavbar>
+                        <form onSubmit={this.handleSubmit}>
+                            <WeraLocationInput location={this.state.location} OnWeraLocationChange={this.handleChange}/>
+                        </form>
+                    </WeraNavbar>
+                </header>
+                <main>
+                    {this.renderCurrentWeather()}
+                </main>
             </div>
         )
     }
 }
 
-export default Uwer;
+export default Wera;

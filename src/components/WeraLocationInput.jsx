@@ -1,20 +1,20 @@
 import React from 'react'
 import { ReactComponent as MapIcon } from '../icons/map.svg'
 
-class UwerLocationInput extends React.Component {
+class WeraLocationInput extends React.Component {
     constructor(props) {
         super(props)
         this.handleChange = this.handleChange.bind(this)
     }
 
     handleChange(event) {
-        this.props.OnUwerLocationChange(event.target.value)
+        this.props.OnWeraLocationChange(event.target.value)
     }
     render() {
         return(
-            <div className="UwerFieldWithIcon">
+            <div className="WeraFieldWithIcon">
                 <input 
-                    className="UwerLocationInput" 
+                    className="WeraLocationInput" 
                     type="text" 
                     name="city" 
                     value={this.props.location} 
@@ -23,7 +23,7 @@ class UwerLocationInput extends React.Component {
                     onChange={this.handleChange}
                     autoFocus={true}
                     />
-                <span className="UwerInputIcon">
+                <span className="WeraInputIcon">
                     <MapIcon/>
                 </span>
             </div>
@@ -31,4 +31,4 @@ class UwerLocationInput extends React.Component {
     }
 }
 
-export default UwerLocationInput;
+export default WeraLocationInput;
