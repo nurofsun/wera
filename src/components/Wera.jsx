@@ -5,7 +5,7 @@ import Config from '../uwer.config.js'
 import WeraLocationInput from './WeraLocationInput.jsx'
 import WeraWeatherContainer from './WeraWeatherContainer.jsx'
 import WeraNavbar from './WeraNavbar.jsx'
-
+import NotFoundImg from '../404.svg'
 import logo from'../logo.svg'
 
 const { API_KEY, BASE_API_URL } = Config;
@@ -135,7 +135,7 @@ class Wera extends React.Component {
         }
         return(
             <div className="WeraErrorMessage">
-                <p>Nothing location has found.</p>
+                <img src={NotFoundImg} alt="No Location Found" />
             </div>
         )
     }
