@@ -16,29 +16,29 @@
    version="1.1"
    id="svg8"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
-   sodipodi:docname="background.svg">
+   sodipodi:docname="background-dark.svg">
   <defs
      id="defs2">
     <linearGradient
        inkscape:collect="always"
-       id="linearGradient1507">
+       id="linearGradient875">
       <stop
-         style="stop-color:#ffcc00;stop-opacity:1"
+         style="stop-color:#3771c8;stop-opacity:1"
          offset="0"
-         id="stop1503" />
+         id="stop871" />
       <stop
-         style="stop-color:#d45500;stop-opacity:1"
+         style="stop-color:#162d50;stop-opacity:1"
          offset="1"
-         id="stop1505" />
+         id="stop873" />
     </linearGradient>
     <linearGradient
        inkscape:collect="always"
-       xlink:href="#linearGradient1507"
-       id="linearGradient1509"
-       x1="89.958344"
-       y1="-104.41074"
-       x2="203.2"
-       y2="297"
+       xlink:href="#linearGradient875"
+       id="linearGradient877"
+       x1="158.75812"
+       y1="-94.051521"
+       x2="207.4763"
+       y2="313.68625"
        gradientUnits="userSpaceOnUse" />
   </defs>
   <sodipodi:namedview
@@ -48,17 +48,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="401.85101"
-     inkscape:cy="733.05257"
+     inkscape:zoom="0.24748738"
+     inkscape:cx="328.51784"
+     inkscape:cy="447.49438"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      units="px"
-     inkscape:window-width="1366"
-     inkscape:window-height="747"
+     inkscape:window-width="1362"
+     inkscape:window-height="725"
      inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:window-y="20"
      inkscape:window-maximized="0"
      showguides="true"
      inkscape:guide-bbox="true" />
@@ -80,28 +80,27 @@
      id="layer1"
      transform="translate(0,41.666684)">
     <rect
-       style="opacity:1;vector-effect:none;fill:url(#linearGradient1509);fill-opacity:1;stroke:none;stroke-width:2.64583349;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="opacity:1;vector-effect:none;fill:url(#linearGradient877);fill-opacity:1;stroke:none;stroke-width:2.64583349;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect877"
        width="203.19998"
        height="338.66669"
        x="1.1155274e-05"
        y="-41.666691" />
     <g
-       id="g1501"
-       transform="translate(0,-21.166668)"
-       style="fill:#ffe680">
+       id="g900"
+       transform="translate(0,-26.458335)">
       <path
          sodipodi:nodetypes="cccsscc"
          inkscape:connector-curvature="0"
          id="rect824"
          d="M 3.5258788e-6,-41.666683 H 203.2 V -2.6454048 C 179.96694,-11.830874 146.8166,-13.841436 132.81736,-9.784886 89.611707,2.7347903 73.39667,26.004462 48.346559,25.262697 16.418801,24.317277 6.3209247,17.00414 3.5258788e-6,-2.6454048 Z"
-         style="opacity:1;vector-effect:none;fill:#ffe680;fill-opacity:0.33971294;stroke:none;stroke-width:2.64583349;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+         style="opacity:1;vector-effect:none;fill:#5f8dd3;fill-opacity:0.33971294;stroke:none;stroke-width:2.64583349;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
       <path
          sodipodi:nodetypes="ccccc"
          inkscape:connector-curvature="0"
          id="rect830"
          d="M -1.2370606e-6,-41.666683 H 203.20001 v 66.586288 c -97.13476,11.963539 -134.775904,-67.505661 -203.2000112370606,0 z"
-         style="opacity:1;vector-effect:none;fill:#ffe680;fill-opacity:0.44976077;stroke:none;stroke-width:2.63593841;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+         style="opacity:1;vector-effect:none;fill:#87aade;fill-opacity:0.44976077;stroke:none;stroke-width:2.63593841;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
     </g>
   </g>
 </svg>
