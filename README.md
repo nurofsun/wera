@@ -1,5 +1,16 @@
 # Wera
+<p>
+<img src="https://img.shields.io/github/license/nurofsun/wera?style=flat-square"/>
+<img alt="GitHub package.json version" src="https://img.shields.io/github/package-json/v/nurofsun/wera">
+<img alt="GitHub issues" src="https://img.shields.io/github/issues/nurofsun/wera">
+</p>
 Weather app, instant and easy way to check current weather by specific location.
+
+## Features
+- Easy to use.
+- Instant way to check current weather more than 2000 million places.
+- Dynamic theme.
+
 
 <!--# Uwer-->
 <!--Weather app created with react.js-->
