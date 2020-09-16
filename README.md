@@ -1,7 +1,10 @@
-# Uwer
-Weather app created with react.js
+# Wera
+Weather app, instant and easy way to check current weather by specific location.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!--# Uwer-->
+<!--Weather app created with react.js-->
+
+<!--This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).-->
 
 ## Available Scripts
 
