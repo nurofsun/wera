@@ -1,6 +1,4 @@
 import React from "react"
-// app config
-import Config from '../uwer.config.js'
 // sub components
 import WeraLocationInput from './WeraLocationInput.jsx'
 import WeraWeatherContainer from './WeraWeatherContainer.jsx'
@@ -8,7 +6,7 @@ import WeraNavbar from './WeraNavbar.jsx'
 import NotFoundImg from '../404.svg'
 import logo from'../logo.svg'
 
-const { API_KEY, BASE_API_URL } = Config;
+const { REACT_APP_API_URL, REACT_APP_API_KEY } = process.env;
 
 function getMonthName(monthIndex) {
     let months = [
@@ -70,7 +68,7 @@ class Wera extends React.Component {
     }
     // custom methods goes here
     getCurrentWeather() {
-        fetch(`${BASE_API_URL}/weather?q=${this.state.location}&appid=${API_KEY}&units=metric`)
+        fetch(`${REACT_APP_API_URL}/weather?q=${this.state.location}&appid=${REACT_APP_API_KEY}&units=metric`)
             .then( response => {
                 if (!response.ok) {
                     this.setState({
